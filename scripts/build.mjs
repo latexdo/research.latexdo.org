@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const outDir = path.join(root, "dist");
 const staticFiles = ["index.html", "style.css", "CNAME", "README.md", "LICENSE"];
-const staticDirs = ["assets"];
+const staticDirs = ["assets", "compiler", "knowledge-graph", "ai"];
 
 await rm(outDir, { recursive: true, force: true });
 await mkdir(outDir, { recursive: true });
