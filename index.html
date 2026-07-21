@@ -53,9 +53,9 @@
 
     <header class="site-header" data-header>
       <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand" href="https://latexdo.org/" aria-label="LatexDo home">
+        <a class="brand" href="https://research.latexdo.org/" aria-label="LatexDo Research home">
           <img src="assets/icon.svg" alt="" width="36" height="36" />
-          <span>LatexDo</span>
+          <span>LatexDo Research</span>
         </a>
         <button
           class="nav-toggle"
@@ -82,45 +82,94 @@
     <main id="content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-visual" aria-hidden="true">
-          <div class="code-pane">
-            <span>\documentclass{article}</span>
-            <span>\usepackage{latexdo}</span>
-            <span>\title{Verified Research Draft}</span>
-            <span>\begin{document}</span>
-            <span>\cite{smith2026graph}</span>
-          </div>
-          <div class="graph-map">
-            <span class="node node-source">Source</span>
-            <span class="node node-compile">Compiler</span>
-            <span class="node node-graph">Graph</span>
-            <span class="node node-ai">AI</span>
-            <span class="node node-paper">Paper</span>
-          </div>
-          <div class="signal-panel">
-            <span>diagnostics: clean</span>
-            <span>references: linked</span>
-            <span>claims: traced</span>
+          <div class="research-console">
+            <div class="console-topbar">
+              <span class="console-window-dots"><span></span><span></span><span></span></span>
+              <span>research.latexdo.org</span>
+              <strong>live system map</strong>
+            </div>
+            <div class="console-grid">
+              <div class="console-pane console-editor">
+                <div class="console-pane-header">
+                  <span>paper.tex</span>
+                  <strong>source</strong>
+                </div>
+                <pre><code>\section{Method}
+We compile locally, trace citations,
+and expose verified context to AI.
+
+\cite{smith2026graph}</code></pre>
+              </div>
+              <div class="console-pane console-diagnostics">
+                <div class="console-pane-header">
+                  <span>compiler</span>
+                  <strong>clean</strong>
+                </div>
+                <ul>
+                  <li><span></span>latexmk completed</li>
+                  <li><span></span>diagnostics ranked</li>
+                  <li><span></span>PDF synchronized</li>
+                </ul>
+              </div>
+              <div class="console-pane console-graph">
+                <div class="graph-node graph-node-a">Smith</div>
+                <div class="graph-node graph-node-b">Venue</div>
+                <div class="graph-node graph-node-c">Draft</div>
+                <div class="graph-node graph-node-d">AI</div>
+              </div>
+              <div class="console-pane console-ai">
+                <div class="console-pane-header">
+                  <span>assistant</span>
+                  <strong>grounded</strong>
+                </div>
+                <p>Uses project files, compile output, and citation graph before changing text.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="hero-copy">
-          <p class="eyebrow">Research systems for technical writing</p>
+          <p class="eyebrow">LatexDo Research</p>
           <h1 id="hero-title">LatexDo Research</h1>
-          <p>
-            This page is connected to the actual LatexDo editor work. The
-            compiler comes from the Electron compile service, the graph comes
-            from the bibliography and citation analysis modules, and the AI
-            assistant is wired through the same project tools used inside the
-            app.
+          <p class="hero-subtitle">Systems research behind reliable LaTeX writing.</p>
+          <p class="hero-lede">
+            Compiler diagnostics, bibliography graphs, and agent tools run as
+            one feedback loop: write, check, link, cite, and revise with
+            evidence from the active project.
           </p>
           <div class="hero-actions" aria-label="Research areas">
             <a href="https://research.latexdo.org/compiler">Compiler</a>
             <a href="https://research.latexdo.org/knowledge-graph">Knowledge Graph</a>
             <a href="https://research.latexdo.org/ai">AI</a>
           </div>
+          <dl class="hero-stats" aria-label="Research scope">
+            <div>
+              <dt>3</dt>
+              <dd>connected systems</dd>
+            </div>
+            <div>
+              <dt>1</dt>
+              <dd>project context</dd>
+            </div>
+            <div>
+              <dt>0</dt>
+              <dd>detached demos</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
       <section class="research-stack" aria-label="Research stack">
+        <div class="stack-heading">
+          <div>
+            <p class="eyebrow">Research map</p>
+            <h2>One workflow from source to checked draft.</h2>
+          </div>
+          <p>
+            Each track is built around the same editor state. The compiler
+            produces diagnostics, the graph gives citation context, and the AI
+            uses both before making recommendations.
+          </p>
+        </div>
         <article id="compiler" class="research-panel compiler-panel">
           <div class="panel-heading">
             <span class="track-index">01</span>
@@ -138,6 +187,7 @@
               <code>electron/latexDiagnostics.ts</code>,
               <code>src/features/compile/useCompile.ts</code>
             </p>
+            <a class="track-link" href="https://research.latexdo.org/compiler">Open compiler research</a>
           </div>
           <div class="panel-grid">
             <section>
@@ -187,6 +237,7 @@
               <code>src/features/graph/knowledgeGraph.ts</code>,
               <code>src/components/KnowledgeGraphView.tsx</code>
             </p>
+            <a class="track-link" href="https://research.latexdo.org/knowledge-graph">Open graph research</a>
           </div>
           <div class="panel-grid">
             <section>
@@ -236,6 +287,7 @@
               <code>src/features/ai/useAiAgent.ts</code>,
               <code>src/features/ai/aiClient.ts</code>
             </p>
+            <a class="track-link" href="https://research.latexdo.org/ai">Open AI research</a>
           </div>
           <div class="panel-grid">
             <section>
@@ -272,16 +324,23 @@
 
       <section id="organization" class="organization">
         <div>
-          <p class="eyebrow">Organization</p>
-          <h2>How the pieces work together.</h2>
+          <p class="eyebrow">System loop</p>
+          <h2>One context, three feedback signals.</h2>
         </div>
-        <p>
-          The product connection is direct: <code>App.tsx</code> builds the
-          citation analysis, creates the knowledge graph, opens the graph view,
-          and passes an <code>AgentContext</code> into the AI sidebar. The AI can
-          compile through the same app action, read the same project files, and
-          recommend citations from the same graph-backed bibliography analysis.
-        </p>
+        <div class="loop-list">
+          <div class="loop-step">
+            <span>01</span>
+            <p><strong>Compile.</strong> Local TeX output becomes ranked diagnostics tied back to source files.</p>
+          </div>
+          <div class="loop-step">
+            <span>02</span>
+            <p><strong>Connect.</strong> BibTeX entries and citation usage become a graph the editor can query.</p>
+          </div>
+          <div class="loop-step">
+            <span>03</span>
+            <p><strong>Assist.</strong> AI tools receive the same files, diagnostics, and citation context before acting.</p>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -293,15 +352,6 @@
             <span>LatexDo</span>
           </a>
           <p>Modern LaTeX editing across web and desktop.</p>
-          <a class="footer-research-card" href="https://research.latexdo.org/" aria-label="Open LatexDo Research">
-            <span class="footer-research-eyebrow">LatexDo Research</span>
-            <span class="footer-research-title">Compiler, Knowledge Graph, and AI</span>
-            <span class="footer-research-tags" aria-hidden="true">
-              <span>Compiler</span>
-              <span>Knowledge Graph</span>
-              <span>AI</span>
-            </span>
-          </a>
         </div>
         <div>
           <h5>Product</h5>
@@ -311,6 +361,14 @@
             <a href="https://store.latexdo.org">Store</a>
             <a href="https://benchmarks.latexdo.org">Benchmarks</a>
             <a href="https://latexdo.org/downloads/">Desktop</a>
+          </nav>
+        </div>
+        <div>
+          <h5>Research</h5>
+          <nav aria-label="Research">
+            <a href="https://research.latexdo.org/compiler">Compiler</a>
+            <a href="https://research.latexdo.org/knowledge-graph">Knowledge Graph</a>
+            <a href="https://research.latexdo.org/ai">AI</a>
           </nav>
         </div>
         <div>
@@ -339,7 +397,7 @@
           </nav>
         </div>
         <div class="footer-bottom">
-          <span>&copy; <span id="copyright-year"></span> LatexDo. All rights reserved.</span>
+          <span>&copy; <span id="copyright-year"></span> LatexDo. <a href="https://opensource.org/license/mit">MIT License</a>.</span>
         </div>
       </div>
     </footer>
