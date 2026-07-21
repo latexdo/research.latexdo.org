@@ -1,0 +1,15 @@
+{
+  "name": "research.latexdo.org",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static research site for LatexDo.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/dev-server.mjs dist --port 4173"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
